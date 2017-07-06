@@ -1,0 +1,40 @@
+<!--
+  Generated template for the MyGiftsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mine gaver</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary" floating>Navn</ion-label>
+    <ion-input [(ngModel)]="gift.name" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" floating>Alder</ion-label>
+    <ion-input type="number" [(ngModel)]="age" ></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Køn:</ion-label>
+    <ion-select interface="popover" placeholder="Vælg" [(ngModel)]="selectedGendar" name="genar">
+        <ion-option *ngFor="let gendar of gendars" [value]="gendar">{{gendar}}</ion-option>
+      </ion-select>
+  </ion-item>
+  <ion-item>
+        <ion-label>Fritidsinteresser:</ion-label>
+    <ion-select interface="popover" placeholder="Vælg" [(ngModel)]="selectedSport" name="sport">
+        <ion-option *ngFor="let sport of sports" [value]="sport">{{sport}}</ion-option>
+      </ion-select>
+  </ion-item>
+  <p>{{gift.name}}</p>
+
+</ion-content>
