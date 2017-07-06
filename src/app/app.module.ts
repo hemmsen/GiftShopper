@@ -2,28 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 
-import { MyApp } from './app.component';
+import { GiftShopper } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { MyGiftsPage } from '../pages/my-gifts/my-gifts'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+
 @NgModule({
   declarations: [
-    MyApp,
+    GiftShopper,
     HomePage,
-    ListPage
+    ListPage,
+    MyGiftsPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(GiftShopper),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    GiftShopper,
     HomePage,
-    ListPage
+    ListPage,
+    MyGiftsPage
   ],
   providers: [
     StatusBar,
