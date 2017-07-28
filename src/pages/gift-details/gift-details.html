@@ -1,0 +1,38 @@
+<!--
+  Generated template for the GiftDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>GiftDetails</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list insert>
+    <ion-item>
+      <ion-label>Navn:</ion-label>
+      <ion-input [(ngModel)]="gift.name" [disabled]="true"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Alder:</ion-label>
+      <ion-input [(ngModel)]="gift.age" [disabled]="true" class="inputDisabled"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Køn:</ion-label>
+      <ion-input [(ngModel)]="gift.gendar" [disabled]="true"></ion-input>
+    </ion-item>
+    <ion-row> 
+      <div *ngFor='let value of gift.sport'>
+        <ion-chip class="chip">
+          <ion-label>{{value}}</ion-label>
+        </ion-chip>
+      </div>
+    </ion-row>
+  </ion-list>
+</ion-content>

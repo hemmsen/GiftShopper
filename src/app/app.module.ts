@@ -6,9 +6,13 @@ import { GiftShopper } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { MyGiftsPage } from '../pages/my-gifts/my-gifts'
+import {GiftDetailsPage} from '../pages/gift-details/gift-details'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { Geolocation } from '@ionic-native/geolocation'
+import { GiftService } from '../service/gift.service';
+import {ChooseGenderPage} from '../pages/choose-gender/choose-gender';
 
 
 @NgModule({
@@ -16,23 +20,29 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     GiftShopper,
     HomePage,
     ListPage,
-    MyGiftsPage
+    MyGiftsPage,
+    GiftDetailsPage,
+    ChooseGenderPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(GiftShopper),
+    IonicModule.forRoot(GiftShopper)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     GiftShopper,
     HomePage,
     ListPage,
-    MyGiftsPage
+    MyGiftsPage,
+    GiftDetailsPage,
+    ChooseGenderPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    Geolocation,
+    GiftService,
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
-export class AppModule {}
+export class AppModule { }

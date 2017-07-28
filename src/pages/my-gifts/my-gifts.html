@@ -9,32 +9,34 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Mine gaver</ion-title>
+    <ion-title>Opret gaveønske</ion-title>
   </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-  <ion-item>
-    <ion-label color="primary" floating>Navn</ion-label>
-    <ion-input [(ngModel)]="gift.name" ></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label color="primary" floating>Alder</ion-label>
-    <ion-input type="number" [(ngModel)]="age" ></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Køn:</ion-label>
-    <ion-select interface="popover" placeholder="Vælg" [(ngModel)]="selectedGendar" name="genar">
+  <div id="page-my-gifts">
+    <ion-item>
+      <ion-label floating>Navn</ion-label>
+      <ion-input [(ngModel)]="gift.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Alder</ion-label>
+      <ion-input type="number" [(ngModel)]="gift.age"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Interesser</ion-label>
+      <ion-select interface="popover" placeholder="Vælg" [(ngModel)]="gift.gendar" name="genar">
         <ion-option *ngFor="let gendar of gendars" [value]="gendar">{{gendar}}</ion-option>
       </ion-select>
-  </ion-item>
-  <ion-item>
-        <ion-label>Fritidsinteresser:</ion-label>
-    <ion-select interface="popover" placeholder="Vælg" [(ngModel)]="selectedSport" name="sport">
+    </ion-item>
+
+
+    <ion-item id="sportPicker">
+      <ion-label id="sportPickerText">Fritidsinteresser:</ion-label>
+      <ion-select interface="popover" placeholder="Vælg" [(ngModel)]="gift.sport" name="sport" multiple="true">
         <ion-option *ngFor="let sport of sports" [value]="sport">{{sport}}</ion-option>
       </ion-select>
-  </ion-item>
-  <p>{{gift.name}}</p>
-
+    </ion-item>
+    <button ion-button full (click)="save()">Gem</button>
+  </div>
 </ion-content>

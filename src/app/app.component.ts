@@ -1,11 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, Injectable } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
-import {MyGiftsPage} from '../pages/my-gifts/my-gifts';
+import { MyGiftsPage } from '../pages/my-gifts/my-gifts';
+import {ChooseGenderPage} from '../pages/choose-gender/choose-gender';
+import { Router } from '@angular/router';
 
 @Component({
   templateUrl: 'app.html'
@@ -15,7 +17,7 @@ export class GiftShopper {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{ title: string, component: any }>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
@@ -23,8 +25,10 @@ export class GiftShopper {
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage },
-      {title: 'Mine gaver', component :MyGiftsPage}
+      { title: 'Gaver', component: ListPage },
+      { title: 'Opret gaveønske', component: MyGiftsPage },
+      // { title: 'Opret gaveønske', component:  ChooseGenderPage},
+
     ];
 
   }
